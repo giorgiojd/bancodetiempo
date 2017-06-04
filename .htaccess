@@ -1,0 +1,50 @@
+RewriteEngine on
+RewriteBase /
+RewriteCond %{REQUEST_FILENAME} !-l
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+
+
+RewriteRule ^acuerdos/(.+)/comentarios(.*)$ Comentarios.php?request=filtro/comentarios/id_acuerdos=$1/id_comentarios/DESC [QSA,NC,L]
+RewriteRule ^acuerdos(.*)$ Acuerdos.php?request=acuerdos/$1 [QSA,NC,L]
+
+RewriteRule ^ambitospropuestas/(.+)/propuestas(.*)$ Propuestas.php?request=filtro/propuestas/id_ambitospropuestas=$1/fecha_propuesta/DESC [QSA,NC,L]
+RewriteRule ^ambitospropuestas(.*)$ Ambitospropuestas.php?request=ambitospropuestas/$1 [QSA,NC,L]
+
+RewriteRule ^comentarios(.*)$ Comentarios.php?request=comentarios/$1 [QSA,NC,L]
+
+RewriteRule ^estadosacuerdos/(.+)/acuerdos(.*)$ Estadosacuerdos.php?request=filtropropio/acuerdos/id_estadosacuerdos1=$1/id_acuerdos/DESC [QSA,NC,L]
+RewriteRule ^estadosacuerdos(.*)$ Estadosacuerdos.php?request=estadosacuerdos/$1 [QSA,NC,L]
+
+RewriteRule ^eventos(.*)$ Eventos.php?request=eventos$1 [QSA,NC,L]
+
+RewriteRule ^mensajespropuestas(.*)$ Mensajespropuestas.php?request=mensajespropuestas/$1 [QSA,NC,L]
+
+RewriteRule ^perfiles/(.+)/usuarios(.*)$ Usuarios.php?request=filtro/usuarios/id_perfiles=$1/nombre/ASC [QSA,NC,L]
+RewriteRule ^perfiles(.*)$ Perfiles.php?request=perfiles/$1 [QSA,NC,L]
+
+RewriteRule ^propuestas/(.+)/acuerdos(.*)$ Acuerdos.php?request=filtro/acuerdos/id_propuestas=$1/id_acuerdos/DESC [QSA,NC,L]
+RewriteRule ^propuestas/(.+)/mensajespropuestas(.*)$ Propuestas.php?request=filtro/mensajespropuestas/id_propuestas=$1/id_mensajespropuestas/DESC [QSA,NC,L]
+RewriteRule ^propuestas(.*)$ Propuestas.php?request=propuestas/$1 [QSA,NC,L]
+
+RewriteRule ^tipospropuestas/(.+)/propuestas(.*)$ Propuestas.php?request=filtro/propuestas/id_tipospropuestas=$1/fecha_propuesta/DESC [QSA,NC,L]
+RewriteRule ^tipospropuestas(.*)$ Tipospropuestas.php?request=tipospropuestas/$1 [QSA,NC,L]
+
+RewriteRule ^usuarios/(.+)/mensajespropuestas(.*)$ Mensajespropuestas.php?request=filtro/mensajespropuestas/id_usuarios=$1/id_mensajespropuestas/DESC [QSA,NC,L]
+RewriteRule ^usuarios/(.+)/acuerdos(.*)$ Acuerdos.php?request=filtro/acuerdos/id_usuarios2=$1/id_acuerdos/DESC [QSA,NC,L]
+RewriteRule ^usuarios/(.+)/propuestas(.*)$ Propuestas.php?request=filtro/propuestas/id_usuarios=$1/fecha_propuesta/DESC [QSA,NC,L]
+RewriteRule ^usuarios/(.+)/eventos(.*)$ Eventos.php?request=filtro/eventos/id_usuarios=$1/id_eventos/DESC [QSA,NC,L]
+RewriteRule ^usuarios(.*)$ Usuarios.php?request=usuarios/$1 [QSA,NC,L]
+
+RewriteRule ^(.*)$ Error.php?request=error [QSA,NC,L]
+
+
+
+
+
+
+
+
+
+
+
